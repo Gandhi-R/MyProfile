@@ -1,3 +1,6 @@
+/* 1. Import Font dari Google Fonts (Archivo & Public Sans) */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,8 +9,15 @@
 @source '../../storage/framework/views/*.php';
 
 @theme {
-    --font-sans:
-        "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
+    /* 2. Setup Font Family */
+    /* Menjadikan Public Sans sebagai font default untuk seluruh teks */
+    --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    
+    /* Mendaftarkan Archivo sebagai font custom (khusus untuk Navbar/Heading) */
+    --font-archivo: "Archivo", ui-sans-serif, system-ui, sans-serif;
+
+    /* 3. Setup Custom Colors (Neobrutalism Palette) */
+    --color-neo-blue: #3300FF;   /* Warna background Cover & Project */
+    --color-neo-yellow: #FFFF00; /* Warna background About & highlight button */
+    
 }

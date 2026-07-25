@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Company Profile</title>
-
+    <title>Gandhi Rahmawan | Portfolio</title>
+    
+    <!-- Panggil Tailwind CSS v4 -->
     @vite(['resources/css/app.css'])
 </head>
+<body class="bg-gray-50 font-sans antialiased text-black">
 
-<body>
-    <h1 class="text-4xl font-bold text-blue-600 text-center mt-10">
-        Tailwind v4 is Ready!
-    </h1>
+    <!-- Memanggil Komponen Navbar -->
+    <x-navbar />
+
+    <!-- Konten Website (Nanti ditaruh di sini) -->
+    <main>
+        <!-- Dummy section biar halamannya bisa di-scroll dan ngetes navbar sticky-nya -->
+        <section id="home" class="h-screen bg-blue-900 border-b-4 border-black"></section>
+        <section id="about" class="h-screen bg-yellow-400 border-b-4 border-black"></section>
+    </main>
+
 </body>
-
 </html>

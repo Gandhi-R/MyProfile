@@ -1,23 +1,109 @@
-/* 1. Import Font dari Google Fonts (Archivo & Public Sans) */
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-
-@theme {
-    /* 2. Setup Font Family */
-    /* Menjadikan Public Sans sebagai font default untuk seluruh teks */
-    --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+/* Setup Variables untuk Warna & Font */
+:root {
+    --font-sans: "Public Sans", sans-serif;
+    --font-archivo: "Archivo", sans-serif;
     
-    /* Mendaftarkan Archivo sebagai font custom (khusus untuk Navbar/Heading) */
-    --font-archivo: "Archivo", ui-sans-serif, system-ui, sans-serif;
+    --neo-darkblue: #142950;
+    --neo-blue: #0059FF;
+    --neo-yellow: #FFCC00;
+    --neo-red: #FF0252;
+    --neo-green: #2FFF2F;
+    --neo-gray: #7D7D7D;
+}
 
-    /* 3. Setup Custom Colors (Neobrutalism Palette) */
-    --color-neo-blue: #3300FF;   /* Warna background Cover & Project */
-    --color-neo-yellow: #FFFF00; /* Warna background About & highlight button */
-    
+/* Default Body Styling */
+body {
+    font-family: var(--font-sans);
+    margin: 0;
+    background-color: #f9fafb;
+    color: #000000;
+}
+
+/* =========================================
+   NAVBAR COMPONENT STYLES
+========================================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 4px solid #000000;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-archivo);
+    box-sizing: border-box;
+}
+
+.logo {
+    background-color: #3300FF;
+    color: #ffffff;
+    border: 4px solid #000000;
+    font-weight: 900;
+    font-size: 1.5rem;
+    padding: 0.25rem 1rem;
+    box-shadow: 4px 4px 0px 0px #000000;
+}
+
+/* Container Menu Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 4px solid #000000;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;
+    box-shadow: 4px 4px 0px 0px #000000;
+    list-style: none;
+    margin: 0;
+}
+
+/* Individual Links */
+.nav-links a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 700;
+    font-size: 0.875rem;
+    padding: 0.25rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+}
+
+/* Active Menu (Kuning) */
+.nav-links a.active {
+    background-color: var(--neo-yellow);
+    border-color: #000000;
+}
+
+/* Hover Effect Menu */
+.nav-links a:hover:not(.active) {
+    border-color: #000000;
+    background-color: #f3f4f6;
+}
+
+/* Button EN */
+.btn-lang {
+    background-color: #ffffff;
+    color: #000000;
+    border: 4px solid #000000;
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.75rem;
+    font-weight: 700;
+    font-family: var(--font-archivo);
+    box-shadow: 4px 4px 0px 0px #000000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Efek tombol ditekan/di-hover */
+.btn-lang:hover {
+    transform: translate(4px, 4px);
+    box-shadow: none;
 }

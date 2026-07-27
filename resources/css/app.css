@@ -1,17 +1,58 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* Setup Variables untuk Warna & Font */
 :root {
     --font-sans: "Public Sans", sans-serif;
     --font-archivo: "Archivo", sans-serif;
-    
+
     --neo-darkblue: #142950;
-    --neo-blue: #0059FF;
-    --neo-yellow: #FFCC00;
-    --neo-red: #FF0252;
-    --neo-green: #2FFF2F;
-    --neo-gray: #7D7D7D;
+    --neo-blue: #0059ff;
+    --neo-yellow: #ffcc00;
+    --neo-red: #ff0252;
+    --neo-green: #2fff2f;
+    --neo-gray: #7d7d7d;
+    --neo-white: #ffffff;
+}
+
+/* =========================================
+   PAGE SECTIONS STYLES
+========================================= */
+
+.page-section {
+    min-height: 100vh;
+    border-bottom: 4px solid #000000;
+    padding: 6rem 4rem;
+    box-sizing: border-box;
+}
+
+/* Tinggal panggil nama variabel yang ada di :root kamu */
+.section-home {
+    background-color: var(--neo-darkblue);
+}
+
+.section-about {
+    background-color: var(--neo-yellow);
+}
+
+.section-project {
+    background-color: var(--neo-blue);
+}
+
+.section-skills {
+    background-color: var(--neo-red);
+}
+
+.section-github {
+    background-color: var(--neo-gray);
+}
+
+.section-certificate {
+    background-color: var(--neo-white);
+}
+
+.section-contact {
+    background-color: var(--neo-green);
 }
 
 /* Default Body Styling */
@@ -20,6 +61,7 @@ body {
     margin: 0;
     background-color: #f9fafb;
     color: #000000;
+    cursor: default;
 }
 
 /* =========================================
@@ -32,34 +74,35 @@ body {
     width: 100%;
     background-color: #ffffff;
     border-bottom: 4px solid #000000;
-    padding: 1rem 2rem;
+    padding: 1.25rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: var(--font-archivo);
     box-sizing: border-box;
+    gap: 1rem;
 }
 
 .logo {
-    background-color: #3300FF;
+    background-color: #3300ff;
     color: #ffffff;
     border: 4px solid #000000;
     font-weight: 900;
-    font-size: 1.5rem;
-    padding: 0.25rem 1rem;
-    box-shadow: 4px 4px 0px 0px #000000;
+    font-size: 1.75rem;
+    padding: 0.45rem 1.2rem;
+    box-shadow: 6px 6px 0px 0px #000000;
 }
 
 /* Container Menu Links */
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.65rem;
     border: 4px solid #000000;
     border-radius: 9999px;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.25rem;
     background-color: #ffffff;
-    box-shadow: 4px 4px 0px 0px #000000;
+    box-shadow: 6px 6px 0px 0px #000000;
     list-style: none;
     margin: 0;
 }
@@ -69,8 +112,8 @@ body {
     text-decoration: none;
     color: #000000;
     font-weight: 700;
-    font-size: 0.875rem;
-    padding: 0.25rem 1rem;
+    font-size: 0.95rem;
+    padding: 0.4rem 1rem;
     border: 2px solid transparent;
     border-radius: 9999px;
     transition: all 0.2s ease;
@@ -78,7 +121,7 @@ body {
 
 /* Active Menu (Kuning) */
 .nav-links a.active {
-    background-color: var(--neo-yellow);
+    background-color: #ffff00;
     border-color: #000000;
 }
 
@@ -93,12 +136,12 @@ body {
     background-color: #ffffff;
     color: #000000;
     border: 4px solid #000000;
-    border-radius: 0.375rem;
-    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
     font-weight: 700;
+    font-size: 1rem;
     font-family: var(--font-archivo);
-    box-shadow: 4px 4px 0px 0px #000000;
-    cursor: pointer;
+    box-shadow: 6px 6px 0px 0px #000000;
     transition: all 0.2s ease;
 }
 

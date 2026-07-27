@@ -6,17 +6,42 @@
 
     <!-- Navigation Links -->
     <ul class="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#project">Project</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#github">Github</a></li>
-        <li><a href="#certificate">Certificate</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" class="active" data-lang-key="home">Home</a></li>
+        <li><a href="#about" data-lang-key="about">About</a></li>
+        <li><a href="#project" data-lang-key="project">Project</a></li>
+        <li><a href="#skills" data-lang-key="skills">Skills</a></li>
+        <li><a href="#github" data-lang-key="github">Github</a></li>
+        <li><a href="#certificate" data-lang-key="certificate">Certificate</a></li>
+        <li><a href="#contact" data-lang-key="contact">Contact</a></li>
     </ul>
 
     <!-- Extra Button -->
-    <button class="btn-lang">
-        EN
+    <button class="btn-lang" onclick="toggleLanguage(this)">
+        <span class="btn-lang-text">EN</span>
+        <span class="btn-lang-icon">🌐</span>
     </button>
+
+    <script>
+        function toggleLanguage(button) {
+            const langText = button.querySelector('.btn-lang-text');
+            const isEnglish = langText.textContent === 'EN';
+
+            langText.textContent = isEnglish ? 'ID' : 'EN';
+
+            const translations = {
+                home: isEnglish ? 'Beranda' : 'Home',
+                about: isEnglish ? 'Tentang' : 'About',
+                project: isEnglish ? 'Proyek' : 'Project',
+                skills: isEnglish ? 'Keterampilan' : 'Skills',
+                github: isEnglish ? 'Github' : 'Github',
+                certificate: isEnglish ? 'Sertifikat' : 'Certificate',
+                contact: isEnglish ? 'Kontak' : 'Contact'
+            };
+
+            document.querySelectorAll('.nav-links a[data-lang-key]').forEach(link => {
+                const key = link.getAttribute('data-lang-key');
+                link.textContent = translations[key];
+            });
+        }
+    </script>
 </nav>

@@ -1,6 +1,6 @@
 <nav class="navbar">
     <!-- Logo -->
-    <div class="logo">
+    <div class="logo" role="button" tabindex="0" aria-label="Toggle logo active state">
         Gandhi.R
     </div>
 
@@ -43,5 +43,28 @@
                 link.textContent = translations[key];
             });
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const logo = document.querySelector('.logo');
+            if (logo) {
+                logo.addEventListener('click', () => {
+                    logo.classList.toggle('active');
+                });
+
+                logo.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        logo.classList.toggle('active');
+                    }
+                });
+            }
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function () {
+                    document.querySelectorAll('.nav-links a').forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
     </script>
 </nav>

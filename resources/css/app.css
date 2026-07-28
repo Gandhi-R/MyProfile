@@ -91,6 +91,23 @@ body {
     font-size: 1.75rem;
     padding: 0.45rem 1.2rem;
     box-shadow: 6px 6px 0px 0px #000000;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.logo:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px 0px #000000;
+}
+
+.logo:active,
+.logo.active {
+    transform: scale(0.96);
+    box-shadow: 2px 2px 0px 0px #000000;
+    background-color: #ffcc00;
 }
 
 /* Container Menu Links */

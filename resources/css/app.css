@@ -167,3 +167,123 @@ body {
     transform: translate(4px, 4px);
     box-shadow: none;
 }
+
+
+/* =========================================
+   HOME (COVER) SECTION STYLES
+========================================= */
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem; /* Jarak antar elemen teks */
+}
+
+/* Badge "HELLO!! I, M" */
+.badge-hello {
+    background-color: var(--neo-yellow);
+    border: 4px solid #000000;
+    border-radius: 9999px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 900;
+    font-size: 1.2rem;
+    box-shadow: 4px 4px 0px 0px #000000;
+}
+
+/* Judul Nama */
+.home-title {
+    background-color: #ffffff;
+    border: 4px solid #000000;
+    padding: 0.5rem 2rem;
+    font-family: var(--font-archivo);
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin: 0;
+    box-shadow: 8px 8px 0px 0px #000000;
+    text-transform: uppercase;
+}
+
+/* Badge Role */
+.badge-role {
+    background-color: var(--neo-red);
+    color: #ffffff;
+    border: 4px solid #000000;
+    padding: 0.5rem 1.5rem;
+    font-weight: 800;
+    font-size: 1.2rem;
+    box-shadow: 4px 4px 0px 0px #000000;
+}
+
+/* Container Tombol */
+.home-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Tombol General */
+.btn-work, .btn-wa {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #000000;
+    border: 4px solid #000000;
+    padding: 0.75rem 1.5rem;
+    font-weight: 800;
+    font-size: 1rem;
+    box-shadow: 4px 4px 0px 0px #000000;
+    transition: all 0.2s ease;
+}
+
+.btn-work {
+    background-color: #74b9ff; /* Warna biru muda dari desainmu */
+}
+
+.btn-wa {
+    background-color: var(--neo-green);
+}
+
+.btn-work:hover, .btn-wa:hover {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+.icon-btn {
+    width: 20px;
+    height: 20px;
+}
+
+/* Foto Profil ala Polaroid */
+.profile-card {
+    background-color: #ffffff;
+    border: 4px solid #000000;
+    padding: 1rem;
+    box-shadow: 8px 8px 0px 0px #000000;
+    transform: rotate(3deg); /* Biar agak miring dikit sesuai desain */
+    text-align: center;
+}
+
+.profile-img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border: 4px solid #000000;
+    background-color: var(--neo-darkblue); /* Jaga-jaga kalau fotonya transparan */
+}
+
+.profile-username {
+    font-family: var(--font-archivo);
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin: 1rem 0 0 0;
+}

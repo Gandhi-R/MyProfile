@@ -168,15 +168,14 @@ body {
     box-shadow: none;
 }
 
-
 /* =========================================
-   HOME (COVER) SECTION STYLES
+   HOME (COVER) SECTION STYLES (Fiksasi Figma)
 ========================================= */
 .home-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     height: 100%;
 }
@@ -185,72 +184,137 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem; /* Jarak antar elemen teks */
+    gap: 1.5rem; 
+    margin-top: -3rem; /* Naikin dikit ke atas biar seimbang */
 }
 
-/* Badge "HELLO!! I, M" */
+/* --- 1. Hello Badge & Garis --- */
+.hello-wrapper {
+    position: relative;
+    margin-left: 2rem;
+    margin-bottom: 2rem; /* Nempel ke nama */
+    margin-top: -5rem;
+    width: 333px;
+    height: 78px;
+}
+
+.hanging-line {
+    width: 3px;
+    height: 300px; /* Sengaja dibikin SANGAT PANJANG ke atas */
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 20px; /* Talinya nyambung dari bagian dalam badge */
+    z-index: 1; /* Biar talinya ada di belakang badge (karena badge punya z-index: 2) */
+}
+
+.left-line { left: 20px; }
+.right-line { right: 20px; }
+
 .badge-hello {
-    background-color: var(--neo-yellow);
+    background-color: #FF9E1B; 
     border: 4px solid #000000;
     border-radius: 9999px;
     padding: 0.5rem 1.5rem;
     font-weight: 900;
     font-size: 1.2rem;
     box-shadow: 4px 4px 0px 0px #000000;
+    transform: rotate(-3deg);
+    position: relative;
+    z-index: 2;
 }
 
-/* Judul Nama */
+/* --- 2. Title & Dekorasi --- */
+.title-wrapper {
+    position: relative;
+    z-index: 10;
+}
+
 .home-title {
     background-color: #ffffff;
     border: 4px solid #000000;
-    padding: 0.5rem 2rem;
+    border-radius: 8px; /* Agak melengkung dikit di ujung */
+    padding: 1rem 2rem;
     font-family: var(--font-archivo);
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: 900;
     margin: 0;
     box-shadow: 8px 8px 0px 0px #000000;
     text-transform: uppercase;
+    transform: rotate(-2deg); /* Miring ke kiri */
+    letter-spacing: 3px;
+    position: relative;
+    z-index: 5;
 }
 
-/* Badge Role */
+/* Kotak tempelan di belakang nama */
+.deco-box {
+    position: absolute;
+    border: 4px solid #000000;
+    z-index: 1; /* Biar ada di belakang teks nama */
+}
+
+.green-box {
+    width: 50px;
+    height: 60px;
+    background-color: #00FF33;
+    bottom: -30px;
+    left: 30%;
+}
+
+.blue-box {
+    width: 120px;
+    height: 70px;
+    background-color: #4B85FF;
+    bottom: -40px;
+    right: 5%;
+}
+
+/* --- 3. Role Badge --- */
 .badge-role {
     background-color: var(--neo-red);
     color: #ffffff;
     border: 4px solid #000000;
-    padding: 0.5rem 1.5rem;
-    font-weight: 800;
-    font-size: 1.2rem;
+    padding: 0.75rem 2rem;
+    font-family: var(--font-sans);
+    font-weight: 900;
+    font-size: 1.4rem;
     box-shadow: 4px 4px 0px 0px #000000;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 15; /* Numpuk di atas kotak hijau */
 }
 
-/* Container Tombol */
+/* --- 4. Buttons --- */
 .home-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-top: 1rem;
+    margin-left: 2rem;
 }
 
-/* Tombol General */
 .btn-work, .btn-wa {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
-    color: #000000;
     border: 4px solid #000000;
     padding: 0.75rem 1.5rem;
-    font-weight: 800;
-    font-size: 1rem;
+    font-weight: 900;
+    font-size: 1.1rem;
     box-shadow: 4px 4px 0px 0px #000000;
     transition: all 0.2s ease;
+    border-radius: 4px;
 }
 
 .btn-work {
-    background-color: #74b9ff; /* Warna biru muda dari desainmu */
+    background-color: #5C9AFF; /* Biru terang */
+    color: #ffffff;
 }
 
 .btn-wa {
-    background-color: var(--neo-green);
+    background-color: #00FF33; /* Hijau terang WA */
+    color: #000000;
 }
 
 .btn-work:hover, .btn-wa:hover {
@@ -258,32 +322,40 @@ body {
     box-shadow: none;
 }
 
-.icon-btn {
-    width: 20px;
-    height: 20px;
+/* --- 5. Polaroid Profile Card --- */
+.profile-card {
+    background-color: #F8EEDB; /* Warna cream persis di desain */
+    border: 4px solid #000000;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 8px 8px 0px 0px #000000;
+    text-align: center;
+    position: relative;
+    width: 320px;
 }
 
-/* Foto Profil ala Polaroid */
-.profile-card {
-    background-color: #ffffff;
-    border: 4px solid #000000;
-    padding: 1rem;
-    box-shadow: 8px 8px 0px 0px #000000;
-    transform: rotate(3deg); /* Biar agak miring dikit sesuai desain */
-    text-align: center;
+.star-sticker {
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    width: 50px;
+    height: 50px;
+    z-index: 20;
 }
 
 .profile-img {
-    width: 250px;
+    width: 100%;
     height: 300px;
     object-fit: cover;
     border: 4px solid #000000;
-    background-color: var(--neo-darkblue); /* Jaga-jaga kalau fotonya transparan */
+    border-radius: 8px; /* Sedikit melengkung di dalam */
+    background-color: #1a1a1a;
 }
 
 .profile-username {
-    font-family: var(--font-archivo);
-    font-weight: 800;
-    font-size: 1.2rem;
-    margin: 1rem 0 0 0;
+    font-family: 'Lexend Mega';
+    font-weight: regular;
+    font-size: 40px;
+    margin: 1.5rem 0 0.5rem 0;
+    color: #000000;
 }

@@ -115,15 +115,15 @@
                     <!-- 3 Kotak Kontak Kecil -->
                     <div class="about-contacts">
                         <div class="contact-card bg-white">
-                            <img src="{{ asset('images/icons/location.svg') }}" alt="Pin" class="contact-icon">
+                            <img src="{{ asset('images/icons/icon-location.svg') }}" alt="Pin" class="contact-icon">
                             <span class="contact-text">Malang,<br>Indonesia</span>
                         </div>
                         <div class="contact-card bg-cyan">
-                            <img src="{{ asset('images/icons/email.svg') }}" alt="Mail" class="contact-icon">
+                            <img src="{{ asset('images/icons/icon-email.svg') }}" alt="Mail" class="contact-icon">
                             <span class="contact-text">gandhirahmawan<br>@gmail.com</span>
                         </div>
                         <a href="#contact" class="contact-card bg-white btn-hire">
-                            <img src="{{ asset('images/icons/send.svg') }}" alt="Hire" class="contact-icon">
+                            <img src="{{ asset('images/icons/icon-share.svg') }}" alt="Hire" class="contact-icon">
                             <span class="contact-text font-black">HIRE ME</span>
                         </a>
                     </div>

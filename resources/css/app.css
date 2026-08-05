@@ -15,6 +15,12 @@
     --neo-white: #ffffff;
 }
 
+/* Bikin efek scroll mulus dan kasih jarak dari Navbar */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px; /* Sesuaikan angkanya sama tinggi Navbar kamu biar nggak ketutup */
+}
+
 /* =========================================
    PAGE SECTIONS STYLES
 ========================================= */

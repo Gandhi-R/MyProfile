@@ -605,3 +605,131 @@ body {
     display: block; /* Menghindari ruang kosong aneh di bawah gambar */
     border: 2px solid #1a1a1a; /* Opsional: garis tipis batas antara foto dan frame putih */
 }
+
+/* =========================================
+   PROJECT SECTION STYLES
+========================================= */
+.section-project {
+    background-color: #0d6efd; /* Warna biru terang sesuai Figma */
+    padding: 6rem 1rem;
+}
+
+.project-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* --- HEADER (Title & Nav) --- */
+.project-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 0.5rem;
+    gap: 1rem;
+}
+
+.project-title-box {
+    background-color: #ffde00; /* Kuning terang */
+    border: 5px solid #000000;
+    padding: 1.5rem 2.5rem;
+    box-shadow: 12px 12px 0px 0px #000000;
+    transform: rotate(-2deg);
+}
+
+.project-title-text {
+    font-family: var(--font-archivo);
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin: 0;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.project-nav-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-btn {
+    background-color: #ffde00;
+    border: 5px solid #000000;
+    box-shadow: 6px 6px 0px 0px #000000;
+    width: 55px;
+    height: 55px;
+    font-size: 1.8rem;
+    font-weight: 900;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s ease;
+}
+
+.nav-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px 0px #000000;
+}
+
+/* --- PROJECT CARDS GRID --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.project-card {
+    background-color: #ffffff;
+    border: 5px solid #000000;
+    box-shadow: 12px 12px 0px 0px #000000;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px); /* Efek melayang dikit pas di-hover */
+}
+
+.project-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 5px solid #000000; /* Garis pembatas tebal antara foto dan teks */
+}
+
+.project-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-name {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+}
+
+.project-desc {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.6;
+    margin: 0 0 2rem 0;
+}
+
+.project-tech {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: auto;
+}
+
+.tech-icon {
+    width: 70px;
+    height: 70px;
+}

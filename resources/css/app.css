@@ -15,10 +15,9 @@
     --neo-white: #ffffff;
 }
 
-/* Bikin efek scroll mulus dan kasih jarak dari Navbar */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px; /* Sesuaikan angkanya sama tinggi Navbar kamu biar nggak ketutup */
+    scroll-padding-top: 90px;
 }
 
 /* =========================================
@@ -32,7 +31,6 @@ html {
     box-sizing: border-box;
 }
 
-/* Tinggal panggil nama variabel yang ada di :root kamu */
 .section-home {
     background-color: var(--neo-darkblue);
 }
@@ -190,7 +188,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem; 
+    gap: 1.5rem;
     margin-top: -3rem; /* Naikin dikit ke atas biar seimbang */
 }
 
@@ -213,11 +211,15 @@ body {
     z-index: 1; /* Biar talinya ada di belakang badge (karena badge punya z-index: 2) */
 }
 
-.left-line { left: 20px; }
-.right-line { right: 20px; }
+.left-line {
+    left: 20px;
+}
+.right-line {
+    right: 20px;
+}
 
 .badge-hello {
-    background-color: #FF9E1B; 
+    background-color: #ff9e1b;
     border: 4px solid #000000;
     border-radius: 9999px;
     padding: 0.5rem 1.5rem;
@@ -262,7 +264,7 @@ body {
 .green-box {
     width: 50px;
     height: 60px;
-    background-color: #00FF33;
+    background-color: #00ff33;
     bottom: -30px;
     left: 30%;
 }
@@ -270,7 +272,7 @@ body {
 .blue-box {
     width: 120px;
     height: 70px;
-    background-color: #4B85FF;
+    background-color: #4b85ff;
     bottom: -40px;
     right: 5%;
 }
@@ -299,7 +301,8 @@ body {
     margin-left: 2rem;
 }
 
-.btn-work, .btn-wa {
+.btn-work,
+.btn-wa {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -314,23 +317,24 @@ body {
 }
 
 .btn-work {
-    background-color: #5C9AFF; /* Biru terang */
+    background-color: #5c9aff; /* Biru terang */
     color: #ffffff;
 }
 
 .btn-wa {
-    background-color: #00FF33; /* Hijau terang WA */
+    background-color: #00ff33; /* Hijau terang WA */
     color: #000000;
 }
 
-.btn-work:hover, .btn-wa:hover {
+.btn-work:hover,
+.btn-wa:hover {
     transform: translate(4px, 4px);
     box-shadow: none;
 }
 
 /* --- 5. Polaroid Profile Card --- */
 .profile-card {
-    background-color: #F8EEDB; /* Warna cream persis di desain */
+    background-color: #f8eedb; /* Warna cream persis di desain */
     border: 4px solid #000000;
     border-radius: 12px;
     padding: 1.5rem;
@@ -359,7 +363,7 @@ body {
 }
 
 .profile-username {
-    font-family: 'Lexend Mega';
+    font-family: "Lexend Mega";
     font-weight: regular;
     font-size: 40px;
     margin: 1.5rem 0 0.5rem 0;
@@ -367,20 +371,21 @@ body {
 }
 
 /* =========================================
-   ABOUT SECTION STYLES (Fiksasi Figma)
+   ABOUT SECTION STYLES
 ========================================= */
 .section-about {
     /* Warnanya ngikut variabel yang udah ada di :root */
-    background-color: var(--neo-yellow); 
+    background-color: var(--neo-yellow);
+    padding: 4rem 1rem;
 }
 
 .about-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 1200px;
+    max-width: 1800px;
     margin: 0 auto;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 /* --- KIRI: Teks & Kategori --- */
@@ -388,123 +393,149 @@ body {
     flex: 1.3; /* Kolom kiri lebih lebar */
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 7rem;
 }
 
 .about-main-card {
     background-color: #ffffff;
     border: 4px solid #000000;
     border-radius: 12px;
-    padding: 2.5rem;
+    padding: 3rem;
     box-shadow: 12px 12px 0px 0px #000000;
 }
 
 .about-greeting {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     font-weight: 900;
     margin-top: 0;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
+    margin-bottom: 2rem;
+    line-height: 1.3;
 }
 
 .text-green {
-    color: #129E36; /* Hijau teks nama */
+    color: #129e36; /* Hijau teks nama */
 }
 
 .highlight-blue {
-    background-color: #B2EBF2; /* Block warna biru muda di belakang teks */
+    background-color: #b2ebf2; /* Block warna biru muda di belakang teks */
     padding: 0 0.5rem;
 }
 
 .about-desc {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 500;
-    line-height: 1.6;
+    line-height: 1.8;
     margin: 0;
     color: #1a1a1a;
 }
 
 .about-skills {
     display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    gap: 2rem;
+    flex-wrap: nowrap; /* keep badges on one line */
+    align-items: center;
+    overflow-x: auto; /* allow horizontal scroll on small screens */
+    padding-bottom: 0.5rem;
 }
 
 .skill-box {
+    flex: 0 0 auto; /* prevent shrinking */
     border: 4px solid #000000;
-    padding: 1rem 1.5rem;
+    padding: 1.5rem 2.5rem;
     font-weight: 900;
-    font-size: 1rem;
-    box-shadow: 8px 8px 0px 0px #000000;
+    font-size: 1.3rem;
+    box-shadow: 10px 10px 0px 0px #000000;
     color: #000000;
+    white-space: nowrap; /* ensure the text inside doesn't wrap */
 }
 
 /* Warna Kotak Skill sesuai Figma */
-.bg-light-green { background-color: #98FF98; }
-.bg-cyan { background-color: #00FFFF; }
-.bg-red { background-color: #FF0000; color: #ffffff; }
+.bg-light-green {
+    background-color: #98ff98;
+}
+.bg-cyan {
+    background-color: #00ffff;
+}
+.bg-red {
+    background-color: #ff0000;
+    color: #ffffff;
+}
 
 /* --- KANAN: Banner, Foto & Kontak --- */
 .about-right {
-    flex: 0.9;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    gap: 2rem;
 }
 
 /* Banner ABOUT ME yang miring numpuk foto */
 .about-title-banner {
-    background-color: #FF004D;
+    background-color: #ff004d;
     color: #ffffff;
     border: 4px solid #000000;
-    padding: 1rem 3rem;
+    padding: 1.3rem 3.5rem;
     font-family: var(--font-archivo);
-    font-size: 2.8rem;
+    font-size: 3.2rem;
     font-weight: 900;
     box-shadow: 8px 8px 0px 0px #000000;
     transform: rotate(-3deg);
     position: relative;
     z-index: 10; /* Biar ada di paling atas tumpukan */
-    margin-bottom: -3rem; /* Narik fotonya ke atas biar ketumpuk */
+    margin-bottom: -2rem; /* Narik fotonya ke atas biar ketumpuk */
 }
 
-/* Foto & Tumpukan Biru */
+/* Foto & Tumpukan Biru (polaroid) */
 .about-photo-wrapper {
     position: relative;
+    margin-top: -2rem; /* biar nyelip di bawah banner ABOUT ME */
     margin-bottom: 2rem;
     margin-left: 2rem;
+    z-index: 5;
+    width: 360px;
 }
 
+/* Kotak Biru di Belakang */
 .blue-backdrop {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #4287F5;
-    border: 4px solid #000000;
-    top: 20px;
-    left: 20px;
-    transform: rotate(5deg);
+    width: 50%;
+    height: 50%;
+    background-color: #4287f5;
+    border: 5px solid #000000;
+    top: 10px;
+    left: 10px;
+    transform: rotate(12deg);
     z-index: 1;
 }
 
-.about-photo {
-    width: 280px;
+/* Bingkai Putih Polaroid */
+.photo-frame {
+    background-color: #ffffff;
+    border: 5px solid #000000;
+    padding: 1rem;
+    transform: rotate(-4deg);
+    position: relative;
+    z-index: 2;
+}
+
+/* Gambar Asli */
+.about-img {
+    width: 320px;
     height: 320px;
     object-fit: cover;
-    border: 4px solid #000000;
-    transform: rotate(2deg);
-    position: relative;
-    z-index: 2; /* Fotonya di atas biru, tapi di bawah banner */
+    display: block;
+    border: 2px solid #1a1a1a;
 }
 
 /* Kotak Kontak Kecil (Malang, Email, Hire) */
 .about-contacts {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: flex-end; /* Ngalir ke kanan */
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .contact-card {
@@ -532,4 +563,45 @@ body {
 .btn-hire:hover {
     transform: translate(4px, 4px);
     box-shadow: none;
+}
+.about-photo-wrapper {
+    position: relative;
+    /* Margin negatif biar fotonya sedikit nyelip di bawah banner ABOUT ME */
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    z-index: 5;
+    width: 360px;
+}
+
+/* Kotak Biru di Belakang */
+.blue-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #4287f5; /* Warna biru sesuai gambar */
+    border: 5px solid #000000;
+    top: 30px;
+    left: 30px;
+    transform: rotate(12deg); /* Miring ke kanan */
+    z-index: 1;
+}
+
+/* Bingkai Putih Polaroid */
+.photo-frame {
+    background-color: #ffffff;
+    border: 5px solid #000000;
+    padding: 1rem; /* Memberikan efek frame putih */
+    transform: rotate(-4deg); /* Miring berlawanan (ke kiri) */
+    position: relative;
+    z-index: 2; /* Berada di atas kotak biru */
+}
+
+/* Gambar Asli */
+.about-img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    display: block; /* Menghindari ruang kosong aneh di bawah gambar */
+    border: 2px solid #1a1a1a; /* Opsional: garis tipis batas antara foto dan frame putih */
 }

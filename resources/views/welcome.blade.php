@@ -63,7 +63,7 @@
                             class="profile-img">
                         <p class="profile-username">@gandirmn._</p>
                     </div>
-                </div>
+                </div>s
 
             </div>
         </section>
@@ -77,7 +77,7 @@
                     <!-- Kotak Teks Utama -->
                     <div class="about-main-card">
                         <h3 class="about-greeting">
-                            SAYA <span class="text-green">GANDHI RAHMAWAN,</span><br>
+                            I'M <span class="text-green">GANDHI RAHMAWAN,</span><br>
                             <span class="highlight-blue">S1 INFORMATIC ENGINEERING STUDENT</span>
                         </h3>
                         <p class="about-desc">
@@ -105,11 +105,13 @@
                         ABOUT ME
                     </div>
 
-                    <!-- Foto dengan tumpukan biru di belakangnya -->
+                    <!-- Foto Polaroid (cuma 1) -->
                     <div class="about-photo-wrapper">
                         <div class="blue-backdrop"></div>
-                        <!-- Ganti foto-about.png dengan nama file foto di figma mu -->
-                        <img src="{{ asset('images/profile/foto-about.png') }}" alt="Gandhi About" class="about-photo">
+                        <div class="photo-frame">
+                            <img src="{{ asset('images/profile/profile-2.jpeg') }}" alt="Gandhi About"
+                                class="about-img">
+                        </div>
                     </div>
 
                     <!-- 3 Kotak Kontak Kecil -->
@@ -129,6 +131,8 @@
                     </div>
 
                 </div>
+
+            </div>
 
             </div>
         </section>

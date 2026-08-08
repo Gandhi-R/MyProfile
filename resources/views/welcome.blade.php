@@ -273,7 +273,70 @@
                 </div>
             </section>
 
-            <section id="github" class="page-section section-github"></section>
+            <section id="github" class="page-section section-github">
+                <div class="github-container">
+
+                    <!-- Banner Judul Gantung -->
+                    <div class="github-title-wrapper">
+                        <div class="github-line left-line"></div>
+                        <div class="github-line right-line"></div>
+                        <div class="github-banner">GITHUB STATISTICS</div>
+                    </div>
+
+                    <!-- GitHub Contribution Graph -->
+                    <div class="github-graph-box">
+                        <!-- Save screenshot graph GitHub kamu dengan nama github-graph.png di folder projects -->
+                        <img src="{{ asset('images/projects/github-graph.png') }}" alt="GitHub Contributions Graph"
+                            class="github-graph-img">
+                    </div>
+
+                    <!-- 4 Stat Cards -->
+                    <div class="github-stats-grid">
+
+                        <!-- Stars Card -->
+                        <div class="stat-card bg-gold">
+                            <div class="stat-header">
+                                <span class="stat-title">STARS</span>
+                                <img src="{{ asset('images/icons/icon-star.svg') }}" alt="Star" class="stat-icon">
+                            </div>
+                            <h3 class="stat-number">100</h3>
+                            <p class="stat-desc">RECEIVED ON PROJECTS</p>
+                        </div>
+
+                        <!-- Repositories Card -->
+                        <div class="stat-card bg-purple">
+                            <div class="stat-header">
+                                <span class="stat-title">REPOSITORIES</span>
+                                <img src="{{ asset('images/icons/icon-repo.svg') }}" alt="Repo" class="stat-icon">
+                            </div>
+                            <h3 class="stat-number">100</h3>
+                            <p class="stat-desc">PUBLIC REPOSITORIES</p>
+                        </div>
+
+                        <!-- Followers Card -->
+                        <div class="stat-card bg-white">
+                            <div class="stat-header">
+                                <span class="stat-title">FOLLOWERS</span>
+                                <img src="{{ asset('images/icons/icon-users.svg') }}" alt="Users" class="stat-icon">
+                            </div>
+                            <h3 class="stat-number">100</h3>
+                            <p class="stat-desc">GITHUB FOLLOWERS</p>
+                        </div>
+
+                        <!-- Contributions Card -->
+                        <div class="stat-card bg-green">
+                            <div class="stat-header">
+                                <span class="stat-title">CONTRIBUTIONS</span>
+                                <img src="{{ asset('images/icons/icon-commit.svg') }}" alt="Commit" class="stat-icon">
+                            </div>
+                            <h3 class="stat-number">100</h3>
+                            <p class="stat-desc">LAST YEAR</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
 
             <section id="certificate" class="page-section section-certificate"></section>
 

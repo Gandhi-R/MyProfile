@@ -828,3 +828,134 @@ body {
     text-transform: uppercase;
     color: #000000;
 }
+
+/* =========================================
+   GITHUB STATISTICS SECTION
+========================================= */
+.section-github {
+    background-color: #7D7D7D; /* Warna abu-abu netral sesuai figma */
+    padding: 2rem 1rem 8rem 1rem;
+}
+
+.github-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* --- Banner Gantung --- */
+.github-title-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: -2rem; 
+}
+
+.github-line {
+    width: 4px;
+    height: 80px;
+    background-color: #000000;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.github-line.left-line { left: 10%; }
+.github-line.right-line { right: 10%; }
+
+.github-banner {
+    background-color: #2CD9E5; /* Biru tosca terang */
+    border: 5px solid #000000;
+    padding: 1rem 3rem;
+    font-family: var(--font-archivo);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #ffffff; /* Teksnya warna putih */
+    box-shadow: 10px 10px 0px 0px #000000;
+    position: relative;
+    z-index: 2;
+    margin-top: 60px; 
+    text-transform: uppercase;
+}
+
+/* --- GitHub Graph Box --- */
+.github-graph-box {
+    width: 100%;
+    background-color: #ffffff;
+    border: 5px solid #000000;
+    padding: 1rem;
+    box-shadow: 10px 10px 0px 0px #000000;
+    border-radius: 8px; /* Dikasih lengkung dikit ngikutin gambar figma */
+}
+
+.github-graph-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- 4 Stat Cards Grid --- */
+.github-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 100%;
+}
+
+.stat-card {
+    border: 5px solid #000000;
+    box-shadow: 8px 8px 0px 0px #000000;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px 0px #000000;
+}
+
+/* Warna masing-masing Card */
+.bg-gold { background-color: #E2AD39; }
+.bg-purple { background-color: #7B4CE4; }
+.bg-white { background-color: #FFFFFF; }
+.bg-green { background-color: #38DA62; }
+
+/* Teks dan Icon di dalam Card */
+.stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-title {
+    font-size: 1rem;
+    font-weight: 900;
+    color: #000000;
+}
+
+.stat-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.stat-number {
+    font-family: var(--font-archivo);
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 0;
+    color: #000000;
+}
+
+.stat-desc {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0;
+    color: #000000;
+    text-transform: uppercase;
+}

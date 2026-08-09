@@ -300,7 +300,7 @@
                                 <span class="stat-title">STARS</span>
                                 <img src="{{ asset('images/icons/icon-bintang.svg') }}" alt="Star" class="stat-icon">
                             </div>
-                            <h3 class="stat-number">100</h3>
+                            <h3 class="stat-number">1</h3>
                             <p class="stat-desc">RECEIVED ON PROJECTS</p>
                         </div>
 
@@ -308,9 +308,10 @@
                         <div class="stat-card bg-purple">
                             <div class="stat-header">
                                 <span class="stat-title">REPOSITORIES</span>
-                                <img src="{{ asset('images/icons/icon-repositories.svg') }}" alt="Repo" class="stat-icon">
+                                <img src="{{ asset('images/icons/icon-repositories.svg') }}" alt="Repo"
+                                    class="stat-icon">
                             </div>
-                            <h3 class="stat-number">100</h3>
+                            <h3 class="stat-number">6</h3>
                             <p class="stat-desc">PUBLIC REPOSITORIES</p>
                         </div>
 
@@ -320,7 +321,7 @@
                                 <span class="stat-title">FOLLOWERS</span>
                                 <img src="{{ asset('images/icons/icon-person.svg') }}" alt="Users" class="stat-icon">
                             </div>
-                            <h3 class="stat-number">100</h3>
+                            <h3 class="stat-number">4</h3>
                             <p class="stat-desc">GITHUB FOLLOWERS</p>
                         </div>
 
@@ -328,9 +329,10 @@
                         <div class="stat-card bg-green">
                             <div class="stat-header">
                                 <span class="stat-title">CONTRIBUTIONS</span>
-                                <img src="{{ asset('images/icons/icon-contributies.svg') }}" alt="Commit" class="stat-icon">
+                                <img src="{{ asset('images/icons/icon-contributies.svg') }}" alt="Commit"
+                                    class="stat-icon">
                             </div>
-                            <h3 class="stat-number">100</h3>
+                            <h3 class="stat-number">117</h3>
                             <p class="stat-desc">LAST YEAR</p>
                         </div>
 
@@ -339,7 +341,56 @@
                 </div>
             </section>
 
-            <section id="certificate" class="page-section section-certificate"></section>
+            <!-- SECTION CERTIFICATES -->
+            <section id="certificates" class="page-section section-certificates">
+                <div class="cert-container">
+
+                    <!-- Judul Section -->
+                    <div class="cert-header">
+                        <div class="cert-title-box">
+                            <h2 class="cert-title">MY CERTIFICATES</h2>
+                        </div>
+                    </div>
+
+                    <!-- Grid Sertifikat -->
+                    <!-- Grid Sertifikat -->
+                    <div class="cert-grid">
+
+                        <!-- Certificate 1 -->
+                        <div class="cert-card">
+                            <!-- Gambar langsung di luar tanpa div tambahan -->
+                            <img src="{{ asset('images/certificates/cert-1.jpg') }}" alt="Cyber Security Certificate"
+                                class="cert-img">
+                            <div class="cert-content">
+                                <h3 class="cert-name">Ethical Hacking Fundamentals</h3>
+                                <p class="cert-issuer">Issued by: Cisco Networking Academy</p>
+                            </div>
+                        </div>
+
+                        <!-- Certificate 2 -->
+                        <div class="cert-card">
+                            <img src="{{ asset('images/certificates/cert-2.jpg') }}" alt="Web Dev Certificate"
+                                class="cert-img">
+                            <div class="cert-content">
+                                <h3 class="cert-name">Frontend Web Development (React & Next.js)</h3>
+                                <p class="cert-issuer">Issued by: Dicoding Indonesia</p>
+                            </div>
+                        </div>
+
+                        <!-- Certificate 3 -->
+                        <div class="cert-card">
+                            <img src="{{ asset('images/certificates/cert-3.jpg') }}" alt="C Programming Certificate"
+                                class="cert-img">
+                            <div class="cert-content">
+                                <h3 class="cert-name">Advanced C Programming & Memory Management</h3>
+                                <p class="cert-issuer">Issued by: Udemy</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
 
             <section id="contact" class="page-section section-contact"></section>
 

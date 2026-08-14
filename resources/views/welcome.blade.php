@@ -364,7 +364,8 @@
                             <img src="{{ asset('images/certificates/sertif-web.jpg') }}" alt="Web Dev Certificate"
                                 class="cert-img">
                             <div class="cert-content">
-                                <h3 class="cert-name">Frontend Web Development (React & Next.js)</h3>
+                                <h3 class="cert-name">mood game website for IVRD</h3>
+                                </h3>
                                 <p class="cert-issuer">Detail</p>
                             </div>
                         </div>

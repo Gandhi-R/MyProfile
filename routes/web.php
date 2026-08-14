@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GithubStatsController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [GithubStatsController::class, 'show']);

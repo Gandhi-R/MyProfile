@@ -1061,6 +1061,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1; 
+    align-items: center;
 }
 
 .cert-name {
@@ -1074,6 +1075,13 @@ body {
 .cert-issuer {
     font-size: 1rem;
     font-weight: 700;
+    background-color: #0300ce; 
     margin: 0;
-    color: #4A4A4A;
+    align-items: center;
+    text-align: center;
+    color: #dbdbdb;
+    width: 80px;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    border: #000000 solid 4px;
 }

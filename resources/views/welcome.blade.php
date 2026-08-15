@@ -282,8 +282,60 @@
 
                     <!-- GitHub Contribution Graph -->
                     <div class="github-graph-box">
-                        <img src="{{ asset('images/projects/github-graph.png') }}" alt="GitHub Contributions Graph"
-                            class="github-graph-img">
+                        <div class="github-graph-wrapper">
+
+                            <!-- Baris label bulan -->
+                            <div class="graph-months">
+                                <div class="graph-day-labels-spacer"></div>
+                                @php $lastMonth = null; @endphp
+                                @foreach ($stats['contributions']['weeks'] as $week)
+                                    @php
+                                        $firstDay = $week['contributionDays'][0]['date'] ?? null;
+                                        $monthLabel = '';
+                                        if ($firstDay) {
+                                            $month = \Carbon\Carbon::parse($firstDay)->format('M');
+                                            if ($month !== $lastMonth) {
+                                                $monthLabel = $month;
+                                                $lastMonth = $month;
+                                            }
+                                        }
+                                    @endphp
+                                    <div class="graph-month-col">{{ $monthLabel }}</div>
+                                @endforeach
+                            </div>
+
+                            <!-- Baris label hari + kotak-kotak -->
+                            <div class="graph-body">
+                                <div class="graph-day-labels">
+                                    <span>Mon</span>
+                                    <span>Wed</span>
+                                    <span>Fri</span>
+                                </div>
+
+                                <div class="github-graph-grid">
+                                    @foreach ($stats['contributions']['weeks'] as $week)
+                                        <div class="graph-col">
+                                            @foreach ($week['contributionDays'] as $day)
+                                                @php
+                                                    $count = $day['contributionCount'];
+                                                    $level = match (true) {
+                                                        $count === 0 => 0,
+                                                        $count <= 2 => 1,
+                                                        $count <= 5 => 2,
+                                                        $count <= 9 => 3,
+                                                        default => 4,
+                                                    };
+                                                @endphp
+                                                <div class="graph-cell level-{{ $level }}"
+                                                    title="{{ $day['date'] }}: {{ $count }} contributions">
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
 
                     <!-- 4 Stat Cards -->
@@ -335,11 +387,10 @@
 
                 </div>
             </section>
-            <!-- SECTION CERTIFICATES -->
+
             <section id="certificates" class="page-section section-certificates">
                 <div class="cert-container">
 
-                    <!-- Judul Section -->
                     <div class="cert-header">
                         <div class="cert-title-box">
                             <h2 class="cert-title">MY CERTIFICATES</h2>
@@ -348,38 +399,43 @@
 
                     <div class="cert-grid">
 
-                        <!-- Certificate 1 -->
+
                         <div class="cert-card">
-                            <!-- Gambar langsung di luar tanpa div tambahan -->
-                            <img src="{{ asset('images/certificates/sertif-database.jpg') }}" alt="Cyber Security Certificate"
-                                class="cert-img">
+                            <img src="{{ asset('images/certificates/sertif-database.jpg') }}"
+                                alt="Cyber Security Certificate" class="cert-img">
                             <div class="cert-content">
-                                <h3 class="cert-name">Ethical Hacking Fundamentals</h3>
-                                <p class="cert-issuer">Detail</p>
+                                <h3 class="cert-name">DSISTEM MANAJEMEN DATABASE TERINTEGRASI UNTUK
+                                    KASIR WARUNG KIKILABANG
+                                </h3>
+                                <button type="button" class="cert-issuer cert-detail-btn"
+                                    data-pdf="{{ asset('images/certificates/sertif-database.pdf') }}">
+                                    Detail
+                                </button>
                             </div>
                         </div>
 
-                        <!-- Certificate 2 -->
                         <div class="cert-card">
                             <img src="{{ asset('images/certificates/sertif-web.jpg') }}" alt="Web Dev Certificate"
                                 class="cert-img">
                             <div class="cert-content">
-                                <h3 class="cert-name">mood game website for IVRD</h3>
-                                </h3>
-                                <p class="cert-issuer">Detail</p>
+                                <h3 class="cert-name">Aplikasi Katalog Online Mod Game Berbasis Web By Indonesian
+                                    Virtual Rail Division</h3>
+                                <button type="button" class="cert-issuer cert-detail-btn"
+                                    data-pdf="{{ asset('images/certificates/sertif-website.pdf') }}">
+                                    Detail
+                                </button>
                             </div>
                         </div>
 
-                        <!-- Certificate 3 -->
-                        <div class="cert-card">
-                            <img src="{{ asset('images/certificates/cert-3.jpg') }}" alt="C Programming Certificate"
-                                class="cert-img">
-                            <div class="cert-content">
-                                <h3 class="cert-name">Advanced C Programming & Memory Management</h3>
-                                <p class="cert-issuer">Detail</p>
-                            </div>
-                        </div>
 
+                    </div>
+
+                    
+                    <div id="pdfModal" class="pdf-modal">
+                        <div class="pdf-modal-content">
+                            <button type="button" class="pdf-modal-close" id="pdfModalClose">&times;</button>
+                            <iframe id="pdfModalFrame" class="pdf-modal-frame" src=""></iframe>
+                        </div>
                     </div>
 
                 </div>
@@ -392,3 +448,38 @@
 </body>
 
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const modal = document.getElementById('pdfModal');
+        const modalFrame = document.getElementById('pdfModalFrame');
+        const closeBtn = document.getElementById('pdfModalClose');
+        const detailButtons = document.querySelectorAll('.cert-detail-btn');
+
+        // Buka modal pas tombol "Detail" diklik
+        detailButtons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                const pdfUrl = btn.getAttribute('data-pdf');
+                modalFrame.setAttribute('src', pdfUrl);
+                modal.classList.add('active');
+            });
+        });
+
+        // Tutup modal pas tombol "X" diklik
+        closeBtn.addEventListener('click', function () {
+            closeModal();
+        });
+
+        // Tutup modal pas klik di area gelap luar kotak PDF
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        function closeModal() {
+            modal.classList.remove('active');
+            modalFrame.setAttribute('src', ''); 
+        }
+    });
+</script>

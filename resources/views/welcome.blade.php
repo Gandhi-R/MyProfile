@@ -92,7 +92,7 @@
                     </div>
 
                 </div>
-
+                
                 <!-- BAGIAN KANAN: Banner, Foto & Kontak -->
                 <div class="about-right">
 
@@ -388,7 +388,7 @@
                 </div>
             </section>
 
-            <section id="certificates" class="page-section section-certificates">
+            <section id="certificate" class="page-section section-certificates">
                 <div class="cert-container">
 
                     <div class="cert-header">
@@ -404,8 +404,8 @@
                             <img src="{{ asset('images/certificates/sertif-database.jpg') }}"
                                 alt="Cyber Security Certificate" class="cert-img">
                             <div class="cert-content">
-                                <h3 class="cert-name">DSISTEM MANAJEMEN DATABASE TERINTEGRASI UNTUK
-                                    KASIR WARUNG KIKILABANG
+                                <h3 class="cert-name">SISTEM MANAJEMEN DATABASE TERINTEGRASI UNTUK
+                                    KASIR WARUNG KIKIL ABANG
                                 </h3>
                                 <button type="button" class="cert-issuer cert-detail-btn"
                                     data-pdf="{{ asset('images/certificates/sertif-database.pdf') }}">
@@ -443,8 +443,6 @@
 
             <section id="contact" class="page-section section-contact">
                 <div class="contact-container">
-
-                    <!-- Bagian Kiri: Teks & Info Direct Contact -->
                     <div class="contact-info-wrapper">
                         <h2 class="contact-heading">LET'S GET IN TOUCH!</h2>
                         <p class="contact-sub">
@@ -463,7 +461,7 @@
                                     class="contact-icon-large">
                                 <span class="contact-text-large">Malang, Indonesia</span>
                             </div>
-                            <!-- Tambahan WhatsApp -->
+
                             <div class="contact-item bg-white">
                                 <img src="{{ asset('images/icons/icon-call.svg') }}" alt="WhatsApp"
                                     class="contact-icon-large">
@@ -501,7 +499,6 @@
 
                 </div>
             </section>
-
     </main>
 
 </body>
@@ -515,7 +512,6 @@
         const closeBtn = document.getElementById('pdfModalClose');
         const detailButtons = document.querySelectorAll('.cert-detail-btn');
 
-        // Buka modal pas tombol "Detail" diklik
         detailButtons.forEach(function (btn) {
             btn.addEventListener('click', function () {
                 const pdfUrl = btn.getAttribute('data-pdf');
@@ -524,12 +520,10 @@
             });
         });
 
-        // Tutup modal pas tombol "X" diklik
         closeBtn.addEventListener('click', function () {
             closeModal();
         });
 
-        // Tutup modal pas klik di area gelap luar kotak PDF
         modal.addEventListener('click', function (e) {
             if (e.target === modal) {
                 closeModal();

@@ -1,0 +1,193 @@
+
+/* =========================================
+   HOME (COVER)
+========================================= */
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 800px;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: -3rem; /* Naikin dikit ke atas biar seimbang */
+}
+
+/* --- 1. Hello Badge & Garis --- */
+.hello-wrapper {
+    position: relative;
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+    width: max-content; /* FIX: Biar kotaknya nggak kepanjangan */
+}
+
+.hanging-line {
+    width: 3px;
+    height: 300px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 50%; /* Talinya mulai dari tengah badge ke atas */
+    z-index: 1; 
+}
+
+.left-line { left: 20px; }
+.right-line { right: 20px; }
+
+.badge-hello {
+    background-color: #ff9e1b;
+    border: 6px solid #000000;
+    padding: 1rem 2rem;
+    font-weight: 900;
+    font-size: 1.6rem;
+    box-shadow: 4px 4px 0px 0px #000000;
+    transform: rotate(-3deg);
+    position: relative;
+    justify-content: center;
+    z-index: 2;
+}
+
+/* --- 2. Title & Dekorasi --- */
+.title-wrapper {
+    position: relative;
+    z-index: 10;
+}
+
+.home-title {
+    background-color: #ffffff;
+    border: 4px solid #000000;
+    border-radius: 8px; /* Agak melengkung dikit di ujung */
+    padding: 1rem 2rem;
+    font-family: var(--font-archivo);
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin: 0;
+    box-shadow: 8px 8px 0px 0px #000000;
+    text-transform: uppercase;
+    transform: rotate(-2deg); /* Miring ke kiri */
+    letter-spacing: 3px;
+    position: relative;
+    z-index: 5;
+}
+
+/* Kotak tempelan di belakang nama */
+.deco-box {
+    position: absolute;
+    border: 4px solid #000000;
+    z-index: 1; /* Biar ada di belakang teks nama */
+}
+
+.green-box {
+    width: 50px;
+    height: 60px;
+    background-color: #00ff33;
+    bottom: -30px;
+    left: 30%;
+}
+
+.blue-box {
+    width: 120px;
+    height: 70px;
+    background-color: #4b85ff;
+    bottom: -40px;
+    right: 5%;
+}
+
+/* --- 3. Role Badge --- */
+.badge-role {
+    background-color: var(--neo-red);
+    color: #ffffff;
+    border: 4px solid #000000;
+    padding: 0.75rem 2rem;
+    font-family: var(--font-sans);
+    font-weight: 900;
+    font-size: 1.4rem;
+    box-shadow: 4px 4px 0px 0px #000000;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 15; /* Numpuk di atas kotak hijau */
+}
+
+/* --- 4. Buttons --- */
+.home-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.btn-work,
+.btn-wa {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    border: 4px solid #000000;
+    padding: 0.75rem 1.5rem;
+    font-weight: 900;
+    font-size: 1.1rem;
+    box-shadow: 4px 4px 0px 0px #000000;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+}
+
+.btn-work {
+    background-color: #5c9aff; /* Biru terang */
+    color: #ffffff;
+}
+
+.btn-wa {
+    background-color: #00ff33; /* Hijau terang WA */
+    color: #000000;
+}
+
+.btn-work:hover,
+.btn-wa:hover {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+/* --- 5. Polaroid Profile Card --- */
+.profile-card {
+    background-color: #f8eedb; /* Warna cream persis di desain */
+    border: 4px solid #000000;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 8px 8px 0px 0px #000000;
+    text-align: center;
+    position: relative;
+    width: 320px;
+}
+
+.star-sticker {
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    width: 50px;
+    height: 50px;
+    z-index: 20;
+}
+
+.profile-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 4px solid #000000;
+    border-radius: 8px; /* Sedikit melengkung di dalam */
+    background-color: #1a1a1a;
+}
+
+.profile-username {
+    font-family: "Lexend Mega";
+    font-weight: regular;
+    font-size: 40px;
+    margin: 1.5rem 0 0.5rem 0;
+    color: #000000;
+}
+

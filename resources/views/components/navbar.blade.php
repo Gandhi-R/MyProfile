@@ -1,10 +1,8 @@
 <nav class="navbar">
-    <!-- Logo -->
     <div class="logo" role="button" tabindex="0" aria-label="Toggle logo active state">
         Gandhi.R
     </div>
 
-    <!-- Navigation Links -->
     <ul class="nav-links">
         <li><a href="#home" class="active" data-lang-key="home">Home</a></li>
         <li><a href="#about" data-lang-key="about">About</a></li>
@@ -15,7 +13,6 @@
         <li><a href="#contact" data-lang-key="contact">Contact</a></li>
     </ul>
 
-    <!-- Extra Button -->
     <button class="btn-lang" onclick="toggleLanguage(this)">
         <span class="btn-lang-text">EN</span>
         <span class="btn-lang-icon">🌐</span>

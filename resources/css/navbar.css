@@ -1,0 +1,104 @@
+
+/* =========================================
+   NAVBAR COMPONENT STYLES
+========================================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 4px solid #000000;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-archivo);
+    box-sizing: border-box;
+    gap: 1rem;
+}
+
+.logo {
+    background-color: #3300ff;
+    color: #ffffff;
+    border: 4px solid #000000;
+    font-weight: 900;
+    font-size: 1.75rem;
+    padding: 0.45rem 1.2rem;
+    box-shadow: 6px 6px 0px 0px #000000;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.logo:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px 0px #000000;
+}
+
+.logo:active,
+.logo.active {
+    transform: scale(0.96);
+    box-shadow: 2px 2px 0px 0px #000000;
+    background-color: #ffcc00;
+}
+
+/* Container Menu Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    border: 4px solid #000000;
+    border-radius: 9999px;
+    padding: 0.75rem 1.25rem;
+    background-color: #ffffff;
+    box-shadow: 6px 6px 0px 0px #000000;
+    list-style: none;
+    margin: 0;
+}
+
+/* Individual Links */
+.nav-links a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.4rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+}
+
+/* Active Menu (Kuning) */
+.nav-links a.active {
+    background-color: #ffff00;
+    border-color: #000000;
+}
+
+/* Hover Effect Menu */
+.nav-links a:hover:not(.active) {
+    border-color: #000000;
+    background-color: #f3f4f6;
+}
+
+/* Button EN */
+.btn-lang {
+    background-color: #ffffff;
+    color: #000000;
+    border: 4px solid #000000;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: var(--font-archivo);
+    box-shadow: 6px 6px 0px 0px #000000;
+    transition: all 0.2s ease;
+}
+
+/* Efek tombol ditekan/di-hover */
+.btn-lang:hover {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}

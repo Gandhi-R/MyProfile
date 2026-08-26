@@ -1,10 +1,7 @@
 
-/* =========================================
-   HOME (COVER)
-========================================= */
 .home-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     max-width: 100%;
     margin: 0 auto;
@@ -13,38 +10,35 @@
 
 .home-content {
     display: flex;
+    margin:0 auto;
+    width: 100%;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 1.5rem;
-    margin-top: -3rem; /* Naikin dikit ke atas biar seimbang */
+    margin-top: -3rem;
 }
 
-/* --- 1. Hello Badge & Garis --- */
 .hello-wrapper {
     position: relative;
-    margin-left: 3rem;
     margin-bottom: 1rem;
-    width: max-content; /* FIX: Biar kotaknya nggak kepanjangan */
+    width: max-content;
 }
 
 .hanging-line {
-    width: 3px;
-    height: 300px;
-    background-color: #ffffff;
+    width: 5px;
+    height: 400px;
+    background-color: #000000;
     position: absolute;
-    bottom: 50%; /* Talinya mulai dari tengah badge ke atas */
+    bottom: 50%;
     z-index: 1; 
 }
-
-.left-line { left: 20px; }
-.right-line { right: 20px; }
 
 .badge-hello {
     background-color: #ff9e1b;
     border: 6px solid #000000;
-    padding: 1rem 2rem;
+    padding: 1.5rem 3rem;
     font-weight: 900;
-    font-size: 1.6rem;
+    font-size: 24px;
     box-shadow: 4px 4px 0px 0px #000000;
     transform: rotate(-3deg);
     position: relative;
@@ -60,17 +54,17 @@
 
 .home-title {
     background-color: #ffffff;
-    border: 4px solid #000000;
+    border: 6px solid #000000;
     border-radius: 8px; /* Agak melengkung dikit di ujung */
     padding: 1rem 2rem;
     font-family: var(--font-archivo);
-    font-size: 3.2rem;
+    font-size: 4.5rem;
     font-weight: 900;
     margin: 0;
-    box-shadow: 8px 8px 0px 0px #000000;
+    box-shadow: 12px 12px 0px 0px #000000;
     text-transform: uppercase;
-    transform: rotate(-2deg); /* Miring ke kiri */
-    letter-spacing: 3px;
+    transform: rotate(-3deg); 
+    letter-spacing: 6px;
     position: relative;
     z-index: 5;
 }
@@ -83,15 +77,15 @@
 }
 
 .green-box {
-    width: 50px;
-    height: 60px;
+    width: 90px;
+    height: 100px;
     background-color: #00ff33;
-    bottom: -30px;
-    left: 30%;
+    bottom: -40px;
+    left: 40%;
 }
 
 .blue-box {
-    width: 120px;
+    width: 12%;
     height: 70px;
     background-color: #4b85ff;
     bottom: -40px;
@@ -151,43 +145,5 @@
 .btn-wa:hover {
     transform: translate(4px, 4px);
     box-shadow: none;
-}
-
-/* --- 5. Polaroid Profile Card --- */
-.profile-card {
-    background-color: #f8eedb; /* Warna cream persis di desain */
-    border: 4px solid #000000;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 8px 8px 0px 0px #000000;
-    text-align: center;
-    position: relative;
-    width: 320px;
-}
-
-.star-sticker {
-    position: absolute;
-    top: -40px;
-    right: -20px;
-    width: 50px;
-    height: 50px;
-    z-index: 20;
-}
-
-.profile-img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border: 4px solid #000000;
-    border-radius: 8px; /* Sedikit melengkung di dalam */
-    background-color: #1a1a1a;
-}
-
-.profile-username {
-    font-family: "Lexend Mega";
-    font-weight: regular;
-    font-size: 40px;
-    margin: 1.5rem 0 0.5rem 0;
-    color: #000000;
 }
 

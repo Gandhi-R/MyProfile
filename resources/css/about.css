@@ -1,7 +1,5 @@
 
-/* =========================================
-   ABOUT SECTION STYLES
-========================================= */
+
 .section-about {
     /* Warnanya ngikut variabel yang udah ada di :root */
     background-color: var(--neo-yellow);

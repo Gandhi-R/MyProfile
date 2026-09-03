@@ -134,18 +134,23 @@ body {
     /* Home Section Mobile */
     .home-container {
         height: auto;
+        min-height: 100vh;
         flex-direction: column-reverse;
-        gap: 1.5rem;
+        gap: 3rem;
+        width: auto;
+        
     }
 
     .home-content {
-        gap: 1rem;
+        height: 1200px;
+        gap: 1.5rem;
+        width: 100%;
         margin-top: 0;
     }
 
     .hello-wrapper {
-        margin-left: 0.5rem;
-        width: 100%;
+        justify-content: center;
+        width: auto;
     }
 
     .badge-hello {
@@ -199,7 +204,8 @@ body {
         flex-direction: column;
         margin-left: 0.5rem;
         gap: 1rem;
-        width: 100%;
+        padding: 12px;
+        width: 80%;
     }
 
     .btn-work,
@@ -303,6 +309,8 @@ body {
         border: 3px solid #000000;
         font-size: 0.9rem;
     }
+
+    
 
     /* Project Section Mobile */
     .section-project {

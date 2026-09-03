@@ -1,5 +1,5 @@
 
-        <<section id="project" class="page-section section-project">
+        <section id="project" class="page-section section-project">
             <div class="project-container">
 
                 <!-- Bagian Atas: Title Banner & Tombol Navigasi -->

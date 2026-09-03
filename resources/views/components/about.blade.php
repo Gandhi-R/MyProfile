@@ -30,12 +30,10 @@
                 <!-- BAGIAN KANAN: Banner, Foto & Kontak -->
                 <div class="about-right">
 
-                    <!-- Judul Miring -->
                     <div class="about-title-banner">
                         ABOUT ME
                     </div>
-
-                    <!-- Foto Polaroid (cuma 1) -->
+                    
                     <div class="about-photo-wrapper">
                         <div class="blue-backdrop"></div>
                         <div class="photo-frame">

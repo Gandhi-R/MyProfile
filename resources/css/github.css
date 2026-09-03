@@ -21,7 +21,7 @@
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: -2rem;
+    margin-top: -6rem;
 }
 
 .github-line {
@@ -85,6 +85,7 @@
     position: relative;
     z-index: 2;
     margin-top: 60px;
+    margin-bottom: 4rem;
     text-transform: uppercase;
 }
 
@@ -144,6 +145,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+    margin-top: 4rem;
     width: 100%;
 }
 

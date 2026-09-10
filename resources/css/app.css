@@ -1,18 +1,16 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* =========================================
    IMPORTS KOMPONEN CSS
 ========================================= */
-@import 'navbar.css';
-@import 'home.css';
-@import 'about.css';
-@import 'project.css';
-@import 'skills.css';
-@import 'github.css';
-@import 'certificate.css';
-@import 'contact.css';
-
+@import "navbar.css";
+@import "home.css";
+@import "about.css";
+@import "project.css";
+@import "skills.css";
+@import "github.css";
+@import "certificate.css";
+@import "contact.css";
 
 :root {
     --font-sans: "Public Sans", sans-serif;
@@ -26,12 +24,10 @@
     --neo-white: #ffffff;
 }
 
-
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
 }
-
 
 /* =========================================
    PAGE SECTIONS STYLES
@@ -80,7 +76,6 @@ body {
     color: #000000;
     cursor: default;
 }
-
 
 /* =========================================
    RESPONSIVE DESIGN - MOBILE (320px - 767px)
@@ -138,11 +133,11 @@ body {
         flex-direction: column-reverse;
         gap: 3rem;
         width: auto;
-        
     }
 
     .home-content {
-        height: 1200px;
+        height: auto;
+        min-height: 0;
         gap: 1.5rem;
         width: 100%;
         margin-top: 0;
@@ -202,10 +197,12 @@ body {
 
     .home-buttons {
         flex-direction: column;
-        margin-left: 0.5rem;
+        margin-left: 0;
         gap: 1rem;
         padding: 12px;
-        width: 80%;
+        width: 100%;
+        max-width: 280px;
+        align-self: center;
     }
 
     .btn-work,
@@ -309,8 +306,6 @@ body {
         border: 3px solid #000000;
         font-size: 0.9rem;
     }
-
-    
 
     /* Project Section Mobile */
     .section-project {
@@ -640,33 +635,5 @@ body {
 
     .stat-number {
         font-size: 1.5rem;
-    }
-}
-
-/* =========================================
-   RESPONSIVE DESIGN (MOBILE)
-========================================= */
-@media (max-width: 768px) {
-    /* 1. HOME SECTION */
-    .home-container {
-        flex-direction: column-reverse; /* Foto profile di atas, teks di bawah */
-        text-align: center;
-        gap: 4rem;
-    }
-    .home-title {
-        font-size: 2.2rem; /* Font dikecilin */
-    }
-    
-    /* 2. PROJECT & SKILLS GRID */
-    .project-grid, .cert-grid {
-        grid-template-columns: 1fr; /* Card jadi 1 baris ke bawah */
-    }
-    
-    /* 3. CONTACT */
-    .contact-container {
-        flex-direction: column;
-    }
-    .contact-info-wrapper, .contact-form-wrapper {
-        width: 100%;
     }
 }

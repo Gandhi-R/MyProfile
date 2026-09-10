@@ -64,11 +64,17 @@
 /* --- PROJECT CARDS GRID --- */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+    justify-content: center;
+    align-items: stretch;
+    width: min(100%, 980px);
+    margin: 0 auto;
     gap: 3rem;
 }
 
 .project-card {
+    width: 100%;
+    max-width: 320px;
     background-color: #ffffff;
     border: 5px solid #000000;
     box-shadow: 12px 12px 0px 0px #000000;

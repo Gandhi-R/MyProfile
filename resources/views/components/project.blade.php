@@ -51,18 +51,7 @@
                         </div>
                     </div>
 
-                    <!-- Card 3 -->
-                    <div class="project-card">
-                        <img src="{{ asset('images/projects/project-3.png') }}" alt="Project 3" class="project-img">
-                        <div class="project-content">
-                            <h3 class="project-name">Restaurant ERD System</h3>
-                            <p class="project-desc">Entity Relationship Diagram and database architecture proposal for a
-                                restaurant management system.</p>
-                            <div class="project-tech">
-                                <img src="{{ asset('images/icons/icon-mysql.svg') }}" alt="MySQL" class="tech-icon">
-                            </div>
-                        </div>
-                    </div>
+    
 
                 </div>
             </div>

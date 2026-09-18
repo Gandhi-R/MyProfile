@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* =========================================
-   IMPORTS KOMPONEN CSS
-========================================= */
+
 @import "navbar.css";
 @import "home.css";
 @import "about.css";
@@ -29,9 +27,6 @@ html {
     scroll-padding-top: 90px;
 }
 
-/* =========================================
-   PAGE SECTIONS STYLES
-========================================= */
 
 .page-section {
     min-height: 100vh;
@@ -296,7 +291,7 @@ body {
 
     .about-contacts {
         gap: 1rem;
-        width: 100%;
+        width: 40%;
     }
 
     .contact-card {

@@ -12,7 +12,7 @@
     align-items: flex-start;
 }
 
-/* --- KIRI: Info & Teks --- */
+
 .contact-info-wrapper {
     flex: 1;
     display: grid;
@@ -141,9 +141,6 @@
     box-shadow: 2px 2px 0px 0px #000000;
 }
 
-/* =========================================
-   RESPONSIVE DESIGN - TABLET (768px - 1024px)
-========================================= */
 @media (max-width: 1024px) {
     .page-section {
         padding: 4rem 2rem;

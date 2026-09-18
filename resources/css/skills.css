@@ -13,7 +13,6 @@
     gap: 15rem; /* Jarak antara papan gantung ke kotak skill */
 }
 
-/* --- Papan Judul Gantung --- */
 .skills-title-wrapper {
     position: relative;
     display: flex;

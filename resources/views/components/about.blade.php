@@ -1,10 +1,8 @@
  <section id="about" class="page-section section-about">
             <div class="about-container">
 
-                <!-- BAGIAN KIRI: Kotak Deskripsi & 3 Badge Skill -->
                 <div class="about-left">
 
-                    <!-- Kotak Teks Utama -->
                     <div class="about-main-card">
                         <h3 class="about-greeting">
                             I'M <span class="text-green">GANDHI RAHMAWAN,</span><br>
@@ -18,7 +16,6 @@
                         </p>
                     </div>
 
-                    <!-- 3 Badge Kategori -->
                     <div class="about-skills">
                         <div class="skill-box bg-light-green">UI/UX DESIGN</div>
                         <div class="skill-box bg-cyan">WEB DEVELOPMENT</div>
@@ -27,7 +24,6 @@
 
                 </div>
                 
-                <!-- BAGIAN KANAN: Banner, Foto & Kontak -->
                 <div class="about-right">
 
                     <div class="about-title-banner">
@@ -42,7 +38,6 @@
                         </div>
                     </div>
 
-                    <!-- 3 Kotak Kontak Kecil -->
                     <div class="about-contacts">
                         <div class="contact-card bg-white">
                             <img src="{{ asset('images/icons/icon-location.svg') }}" alt="Pin" class="contact-icon">

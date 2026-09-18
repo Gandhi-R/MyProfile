@@ -92,7 +92,6 @@
     right: 5%;
 }
 
-/* --- 3. Role Badge --- */
 .badge-role {
     background-color: var(--neo-red);
     color: #ffffff;
@@ -108,7 +107,6 @@
     z-index: 15;
 }
 
-/* --- 4. Buttons --- */
 .home-buttons {
     display: flex;
     justify-content: center;
@@ -133,7 +131,7 @@
 }
 
 .btn-work {
-    background-color: #5c9aff; /* Biru terang */
+    background-color: #5c9aff; 
     color: #ffffff;
 }
 

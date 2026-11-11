@@ -1,20 +1,49 @@
+.section-home.page-section {
+    padding-bottom: 0;
+}
+
 .home-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    max-width: 100%;
+    max-width: 1500px;
     margin: 0 auto;
-    height: 800px;
+    height: calc(100vh - 6rem);
+    min-height: 620px;
+    gap: 2rem;
 }
 
 .home-content {
     display: flex;
-    margin: 0 auto;
-    width: 100%;
+    margin: 0;
+    width: calc(55% - 1rem);
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.5rem;
-    margin-top: -3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.home-profile {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    align-self: stretch;
+    width: calc(45% - 1rem);
+    min-height: 0;
+    z-index: 0;
+}
+
+.home-profile-image {
+    display: block;
+    width: auto;
+    height: 118%;
+    max-width: none;
+    object-fit: contain;
+    object-position: bottom center;
+    transform: scale(1.08);
+    transform-origin: bottom center;
 }
 
 .hello-wrapper {
@@ -51,16 +80,27 @@
     z-index: 10;
 }
 
+.section-home .title-wrapper {
+    width: 100%;
+    max-width: 100%;
+}
+
 .home-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
     background-color: #ffffff;
     border: 6px solid #000000;
     border-radius: 8px; /* Agak melengkung dikit di ujung */
-    padding: 1rem 2rem;
+    padding: 0.8rem 1rem;
     font-family: var(--font-archivo);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    letter-spacing: clamp(2px, 1vw, 6px);
+    font-size: clamp(2rem, 4vw, 4rem);
+    letter-spacing: clamp(1px, 0.5vw, 4px);
     font-weight: 900;
     margin: 0;
+    text-align: center;
     box-shadow: 12px 12px 0px 0px #000000;
     text-transform: uppercase;
     transform: rotate(-3deg);
@@ -109,10 +149,10 @@
 
 .home-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: clamp(2rem, 5vw, 8rem);
-    margin-top: 2rem;
+    gap: 1.25rem;
+    margin-top: 1rem;
 }
 
 .btn-work,
@@ -146,6 +186,29 @@
     box-shadow: none;
 }
 
+@media (max-width: 1024px) {
+    .section-home .home-container {
+        flex-direction: row;
+        height: calc(100vh - 4rem);
+        min-height: 620px;
+    }
+
+    .section-home .home-content {
+        width: calc(50% - 1rem);
+    }
+
+    .section-home .home-profile {
+        width: calc(50% - 1rem);
+        min-height: 0;
+    }
+
+    .section-home .hello-wrapper,
+    .section-home .badge-role,
+    .section-home .home-buttons {
+        margin-left: 0;
+    }
+}
+
 @media (max-width: 420px) {
     .home-container {
         padding-top: 4.5rem;
@@ -176,5 +239,52 @@
     .icon-btn {
         width: 18px;
         height: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-home .home-container {
+        flex-direction: column-reverse;
+        height: auto;
+        min-height: auto;
+        gap: 0;
+        padding: 1rem 0 0;
+    }
+
+    .section-home.page-section {
+        padding-bottom: 2.5rem;
+    }
+
+    .section-home .home-content {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .section-home .home-profile {
+        width: 100%;
+        min-height: 0;
+        height: min(90vw, 500px);
+    }
+
+    .section-home .home-profile-image {
+        width: auto;
+        height: 100%;
+        max-width: 100%;
+        transform: none;
+    }
+
+    .section-home .title-wrapper {
+        width: 100%;
+    }
+
+    .section-home .home-title {
+        font-size: clamp(1.7rem, 7vw, 2.5rem);
+    }
+
+    .section-home .home-buttons {
+        justify-content: center;
+        width: 100%;
+        max-width: 360px;
     }
 }

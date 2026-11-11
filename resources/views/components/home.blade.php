@@ -1,6 +1,5 @@
 <section id="home" class="page-section section-home">
             <div class="home-container">
-
                 <div class="home-content">
 
                     <div class="hello-wrapper">
@@ -27,6 +26,10 @@
                     </div>
                 </div>
 
+                <div class="home-profile">
+                    <img src="{{ asset('images/profile/profile_home.png') }}" alt="Foto Gandhi Rahmawan"
+                        class="home-profile-image">
+                </div>
 
             </div>
         </section>

@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.title-wrapper'),
         document.querySelector('.badge-role'),
         document.querySelector('.home-buttons'),
+        document.querySelector('.home-profile'),
     ].filter(Boolean);
  
     function playHomeIntro() {

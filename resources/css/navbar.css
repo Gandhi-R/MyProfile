@@ -99,3 +99,53 @@
     transform: translate(4px, 4px);
     box-shadow: none;
 }
+
+@media (max-width: 1024px) {
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.35rem;
+    }
+
+    .nav-links a {
+        padding-inline: 0.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        justify-content: stretch;
+        gap: 0.75rem;
+    }
+
+    .logo {
+        justify-self: start;
+        grid-row: 1;
+    }
+
+    .btn-lang {
+        justify-self: end;
+        grid-row: 1;
+    }
+
+    .nav-links {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        border-radius: 1rem;
+        padding: 0.4rem;
+    }
+
+    .nav-links a {
+        padding: 0.25rem 0.45rem;
+        white-space: nowrap;
+    }
+}

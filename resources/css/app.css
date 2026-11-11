@@ -632,3 +632,70 @@ body {
         font-size: 1.5rem;
     }
 }
+
+@media (max-width: 768px) {
+    .section-about .about-contacts {
+        width: 100%;
+    }
+
+    .section-about .contact-card {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        justify-content: flex-start;
+    }
+
+    .skills-title-wrapper,
+    .github-title-wrapper {
+        margin-top: 0;
+    }
+
+    .skills-container,
+    .github-container {
+        gap: 3rem;
+    }
+
+    .github-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cert-grid {
+        box-sizing: border-box;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .github-graph-box {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    .contact-container,
+    .contact-info-wrapper,
+    .contact-form-wrapper {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .github-stats-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .project-title-box,
+    .skills-banner,
+    .github-banner,
+    .cert-title-box {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .home-title,
+    .project-title-text,
+    .skills-banner,
+    .github-banner,
+    .cert-title {
+        overflow-wrap: anywhere;
+    }
+}

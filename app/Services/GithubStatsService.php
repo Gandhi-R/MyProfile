@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
+use RuntimeException;
 
 class GithubStatsService
 {
@@ -12,8 +13,19 @@ class GithubStatsService
 
     public function __construct()
     {
-        $this->username = config('services.github.username');
-        $this->token = config('services.github.token');
+        $username = config('services.github.username');
+        $token = config('services.github.token');
+
+        if (!is_string($username) || trim($username) === '') {
+            throw new RuntimeException('GITHUB_USERNAME is not configured.');
+        }
+
+        if (!is_string($token) || trim($token) === '') {
+            throw new RuntimeException('GITHUB_TOKEN is not configured.');
+        }
+
+        $this->username = $username;
+        $this->token = $token;
     }
 
     public function getStats(): array
@@ -30,9 +42,15 @@ class GithubStatsService
     protected function fetchUser(): array
     {
         $response = Http::withToken($this->token)
-            ->get("https://api.github.com/users/{$this->username}");
+            ->get("https://api.github.com/users/{$this->username}")
+            ->throw();
 
-        return $response->json();
+        $user = $response->json();
+        if (!is_array($user)) {
+            throw new RuntimeException('GitHub returned an invalid user response.');
+        }
+
+        return $user;
     }
 
     protected function fetchRepoStats(): array
@@ -40,9 +58,14 @@ class GithubStatsService
         $response = Http::withToken($this->token)
             ->get("https://api.github.com/users/{$this->username}/repos", [
                 'per_page' => 100,
-            ]);
+            ])
+            ->throw();
 
         $repos = $response->json();
+        if (!is_array($repos)) {
+            throw new RuntimeException('GitHub returned an invalid repositories response.');
+        }
+
         $totalStars = collect($repos)->sum('stargazers_count');
 
         return [
@@ -76,7 +99,12 @@ class GithubStatsService
             ->post('https://api.github.com/graphql', [
                 'query' => $query,
                 'variables' => ['username' => $this->username],
-            ]);
+            ])
+            ->throw();
+
+        if ($response->json('errors')) {
+            throw new RuntimeException('GitHub contribution query failed; check token permissions and username.');
+        }
 
         $data = $response->json('data.user.contributionsCollection.contributionCalendar');
 

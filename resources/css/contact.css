@@ -10,6 +10,7 @@
     justify-content: space-between;
     gap: 4rem;
     align-items: flex-start;
+    min-width: 0;
 }
 
 
@@ -78,6 +79,8 @@
 /* --- KANAN: Form --- */
 .contact-form-wrapper {
     flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
     background-color: #ffffff;
     border: 5px solid #000000;
     box-shadow: 15px 15px 0px 0px #000000;
@@ -104,6 +107,9 @@
 
 .form-group input,
 .form-group textarea {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
     background-color: #f4f4f4;
     border: 4px solid #000000;
     padding: 1rem;
@@ -316,13 +322,13 @@
         font-size: 2.5rem;
     }
 
-    @media (max-width: 768px) {
-        .contact-details {
-            grid-template-columns: 1fr;
-        }
-    }
-
     .contact-form-wrapper {
         padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-details {
+        grid-template-columns: 1fr;
     }
 }

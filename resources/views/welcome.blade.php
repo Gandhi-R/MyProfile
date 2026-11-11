@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth overflow-x-hidden">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,17 +16,10 @@
     <main>
         <x-home />
         <x-about />
-        <x-project />
-        <x-skills />
-        @props([
-            'stats' => [
-                'contributions' => ['weeks' => [], 'total' => 0],
-                'repos' => ['total_stars' => 0, 'total_repos' => 0],
-                'user' => ['followers' => 0],
-            ]
-        ])
+        <x-project :project="$projects" />
+        <x-skills :skills="$skills" />
         <x-github :stats="$stats" />
-        <x-certificate />
+        <x-certificate :certificates="$certificates" />
         <x-contact />
     </main>
 

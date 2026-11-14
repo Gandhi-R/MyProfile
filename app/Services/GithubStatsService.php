@@ -39,43 +39,70 @@ class GithubStatsService
         });
     }
 
-    protected function fetchUser(): array
-    {
-        $response = Http::withToken($this->token)
-            ->get("https://api.github.com/users/{$this->username}")
-            ->throw();
+	protected function fetchUser(): array
+	{
+    	try {
+        	$request = Http::timeout(10);
 
-        $user = $response->json();
-        if (!is_array($user)) {
-            throw new RuntimeException('GitHub returned an invalid user response.');
-        }
+        	if (!empty($this->token)) {
+            	$request = $request->withToken($this->token);
+        	}
 
-        return $user;
-    }
+        	$response = $request->get("https://api.github.com/users/{$this->username}");
+
+        	if ($response->successful() && is_array($response->json())) {
+            	return $response->json();
+        	}
+    	} catch (\Throwable $e) {
+        // Abaikan error API agar halaman portofolio tetap tampil normal
+    	}
+
+    	return [
+        	'public_repos' => 0,
+        	'followers' => 0,
+    	];
+	}
 
     protected function fetchRepoStats(): array
     {
-        $response = Http::withToken($this->token)
-            ->get("https://api.github.com/users/{$this->username}/repos", [
-                'per_page' => 100,
-            ])
-            ->throw();
+        try {
+            $request = Http::timeout(10);
 
-        $repos = $response->json();
-        if (!is_array($repos)) {
-            throw new RuntimeException('GitHub returned an invalid repositories response.');
+            if (!empty($this->token)) {
+                $request = $request->withToken($this->token);
+            }
+
+            $response = $request->get("https://api.github.com/users/{$this->username}/repos", [
+                'per_page' => 100,
+            ]);
+
+            if ($response->successful() && is_array($response->json())) {
+                $repos = $response->json();
+
+                return [
+                    'total_repos' => count($repos),
+                    'total_stars' => collect($repos)->sum('stargazers_count'),
+                ];
+            }
+        } catch (\Throwable $e) {
+            // Abaikan error API agar halaman portofolio tetap tampil normal
         }
 
-        $totalStars = collect($repos)->sum('stargazers_count');
-
         return [
-            'total_repos' => count($repos),
-            'total_stars' => $totalStars,
+            'total_repos' => 0,
+            'total_stars' => 0,
         ];
     }
 
     protected function fetchContributions(): array
     {
+        if (empty($this->token)) {
+            return [
+                'total' => 0,
+                'weeks' => [],
+            ];
+        }
+
         $query = <<<'GRAPHQL'
         query($username: String!) {
           user(login: $username) {
@@ -95,22 +122,29 @@ class GithubStatsService
         }
         GRAPHQL;
 
-        $response = Http::withToken($this->token)
-            ->post('https://api.github.com/graphql', [
-                'query' => $query,
-                'variables' => ['username' => $this->username],
-            ])
-            ->throw();
+        try {
+            $response = Http::timeout(10)
+                ->withToken($this->token)
+                ->post('https://api.github.com/graphql', [
+                    'query' => $query,
+                    'variables' => ['username' => $this->username],
+                ]);
 
-        if ($response->json('errors')) {
-            throw new RuntimeException('GitHub contribution query failed; check token permissions and username.');
+            if ($response->successful() && !$response->json('errors')) {
+                $data = $response->json('data.user.contributionsCollection.contributionCalendar');
+
+                return [
+                    'total' => $data['totalContributions'] ?? 0,
+                    'weeks' => $data['weeks'] ?? [],
+                ];
+            }
+        } catch (\Throwable $e) {
+            // Abaikan error GraphQL agar halaman portofolio tetap tampil normal
         }
 
-        $data = $response->json('data.user.contributionsCollection.contributionCalendar');
-
         return [
-            'total' => $data['totalContributions'] ?? 0,
-            'weeks' => $data['weeks'] ?? [],
+            'total' => 0,
+            'weeks' => [],
         ];
     }
 }
